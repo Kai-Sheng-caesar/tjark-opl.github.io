@@ -24,81 +24,190 @@
     <h1>TJARK-OPL RoboCup Team</h1>
     <nav>
         <a href="#overview">Home</a>
-        <a href="#robots">Robots</a>
-        <a href="#video">Qualification Video</a>
-        <a href="#approach">Approach</a>
+        <a href="#video">Media</a>
         <a href="#publications">Publications</a>
-        <a href="#software">Software</a>
         <a href="#team">Team</a>
         <a href="#history">History</a>
     </nav>
 </header>
 
 <section id="overview">
-    <h2>Overview</h2>
-    <p>Welcome to the official website of the TJARK-OPL team participating in RoboCup@Home.</p>
-    <p>Our robots are designed to integrate multiple abilities: environmental reasoning, task planning, manipulation, perception, and human-robot interaction.</p>
-</section>
+    <h2>Introduction</h2>
 
-<section id="robots">
-    <h2>Robots</h2>
-    <img src="assets/images/robot1.jpg" alt="Robot 1">
-    <img src="assets/images/robot2.jpg" alt="Robot 2">
-    <p>Descriptions of robots, hardware, and unique features go here.</p>
+    <!-- RoboCup@Home League -->
+    <h3>The RoboCup@Home League</h3>
+    <p>
+        The RoboCup@Home league aims to develop service and assistive robot technology with high relevance for future personal domestic applications. 
+        It is the largest international annual competition for autonomous service robots and is part of the RoboCup initiative. 
+        A set of benchmark tests is used to evaluate the robots’ abilities and performance in a realistic non-standardized home environment setting. 
+        Focus lies on the following domains but is not limited to: Human-Robot Interaction and Cooperation, Navigation and Mapping in dynamic environments, 
+        Computer Vision and Object Recognition under natural light conditions, Object Manipulation, Adaptive Behaviors, Behavior Integration, 
+        Ambient Intelligence, Standardization, and System Integration. It is colocated with the RoboCup symposium.
+    </p>
+
+    <!-- TJArk@Home Overview -->
+    <h3>TJArk@Home</h3>
+    <p>
+        The Robotics and Artificial Intelligence Lab (RAIL) of Tongji University was founded in 1992. 
+        Team TJArk of RAIL was founded in 2004 and participated in the RoboCup World Cup from 2006 to 2019. 
+        We achieved seven consecutive championships in the China RoboCup SPL and once won third place in the RoboCup 2018 SPL.
+    </p>
+    <p>
+        In December 2018, we founded a new energetic team to participate in the RoboCup@Home League, called TJArk@Home. 
+        The main goal of TJArk@Home is to explore how well robots can serve people in daily life at an acceptable cost. 
+        Guided by this vision, we conduct extensive research on our robot platform, including:
+    </p>
+    <ul>
+        <li>SLAM (Simultaneous Localization and Mapping)</li>
+        <li>Autonomous navigation</li>
+        <li>Object detection and recognition</li>
+        <li>Human-face detection and analysis</li>
+        <li>Human–robot interaction</li>
+        <li>Motion control</li>
+        <li>Trajectory teaching</li>
+        <li>Design of laptop-based GUI</li>
+    </ul>
+    <p>
+        In April 2019, TJArk@Home participated in the China RoboCup@Home League for the first time and earned first place in the SSPL (Social Standard Platform League). 
+        During the competition, we demonstrated various abilities, including autonomous navigation, following an operator to a given position, 
+        speech recognition and response, and human detection with feature summarization.
+    </p>
+
+    <!-- Visual SLAM -->
+    <h3>Visual Simultaneous Localization and Mapping</h3>
+    <p>
+        Our robot requires an environmental model (map) to support tasks such as autonomous navigation. 
+        However, prior maps are often unavailable in dynamic home scenarios, making SLAM essential. 
+        Stereo camera data is used by a visual SLAM module, assisted by limited laser data and odometry inputs. 
+        Our VSLAM algorithm is based on RTAB-Map and modified for our robot’s sensors. 
+        Odometry and laser data provide initial pose estimation, while stereo data performs appearance-based loop closure to optimize local and global poses.
+    </p>
+    <p>
+        The VSLAM system generates a 3D point cloud, which we project into a 2D grid map for navigation. 
+        With the map and robot parameters, the DWA (Dynamic Window Approach) algorithm plans a safe path. 
+        Vision, laser, and sonar data are fused for real-time obstacle avoidance in dynamic environments. 
+        Motion commands are then sent through robot APIs to enable fully autonomous navigation.
+    </p>
+
+    <!-- Computer Vision -->
+    <h3>Computer Vision</h3>
+    <p>
+        Various vision algorithms are applied to support perception of objects and humans. 
+        Our robot can detect and recognize different people, remember names and features, and track them for interactive tasks. 
+        For object-level reasoning, we designed a detection framework based on YOLO for real-time indoor object recognition across 50 categories. 
+        Training data is collected from large public datasets, and adjacent frame matching is used to improve robustness.
+    </p>
+    <p>
+        As the robot’s built-in camera has a limited field of view, we expand visual perception by stitching images from multiple viewpoints, 
+        followed by fusion algorithms to reduce lighting and geometric inconsistencies. 
+        This enables more complete visual information for high-level processing.
+    </p>
+    <p>
+        For human pose estimation, we employ OpenPose to achieve robust, real-time multi-person body-part detection using a non-parametric representation.
+    </p>
+
+    <!-- GUI -->
+    <h3>Graphical User Interface</h3>
+    <p>
+        As a domestic service robot, smooth GUI interaction is essential. 
+        Our robot is equipped with a laptop that enables a user-friendly, cross-platform graphical interface. 
+        Even users without robotics experience can easily operate the robot.
+    </p>
+    <p>
+        The GUI currently includes twenty applications, such as Motion, Conversation, Vision, and Joints. 
+        Motion allows users to move the robot by distance, direction, or speed. 
+        Conversation supports English and Chinese interaction. 
+        Vision displays real-time camera feeds with adjustable resolution. 
+        Joints provides developers with detailed joint status for debugging. 
+        We expect this GUI to further enhance the robot’s usability and capability.
+    </p>
+
+    <!-- Software Framework -->
+    <h3>Software Framework</h3>
+    <p>
+        We developed a Python-based framework that integrates NAOqi APIs and ROS components. 
+        Team members can easily add custom modules (e.g., motion, detection, navigation) to the framework. 
+        During competitions, the robot can execute complex tasks using these modules. 
+        The framework is still under development, so it is not open-sourced yet.
+    </p>
 </section>
 
 <section id="video">
     <h2>Qualification Video</h2>
-    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-    <p>The video demonstrates a task involving at least 5 different abilities: localization, manipulation, object recognition, task planning, and human-robot interaction.</p>
-    <p>Language: English. Subtitles included where necessary.</p>
+    <iframe src="https://youtu.be/Mq5DDaTxdFg" frameborder="0" allowfullscreen></iframe>
 </section>
-
-<section id="approach">
-    <h2>Approach & Achievements</h2>
-    <p>Describe your technical approaches, algorithms, and scientific achievements.</p>
-    <ul>
-        <li>Environmental reasoning with SLAM</li>
-        <li>High-level task planning</li>
-        <li>Manipulation strategies</li>
-        <li>Object and people recognition</li>
-        <li>Human-robot interaction modules</li>
-    </ul>
-</section>
-
+    
 <section id="publications">
     <h2>Publications</h2>
     <ul>
-        <li><a href="assets/papers/paper1.pdf" target="_blank">Paper </a></li>
-        <li><a href="assets/papers/paper2.pdf" target="_blank">Paper </a></li>
-    </ul>
-</section>
-
-<section id="software">
-    <h2>Software Repositories</h2>
-    <ul>
-        <li><a href="https://github.com/username/repo1" target="_blank">Robot Control Software</a></li>
-        <li><a href="https://github.com/username/repo2" target="_blank">Perception Modules</a></li>
+        <li><a href="assets/papers/paper.pdf" target="_blank">Paper </a></li>
     </ul>
 </section>
 
 <section id="team">
     <h2>Team Members</h2>
+
+    <style>
+        #team table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        #team table, #team th, #team td {
+            border: 1px solid #000;
+        }
+        #team th, #team td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+
     <table>
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Role</th>
+                <th>Introduction</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Name 1</td>
-                <td>Role 1</td>
+                <td>Yang Xu</td>
+                <td>Leader, Graduate student, Department of Control Science and Engineering</td>
             </tr>
             <tr>
-                <td>Name 2</td>
-                <td>Role 2</td>
+                <td>Zhu Qijia</td>
+                <td>Graduate student, Department of Control Science and Engineering</td>
+            </tr>
+            <tr>
+                <td>Qian Liang</td>
+                <td>Graduate student, Department of Control Science and Engineering</td>
+            </tr>
+            <tr>
+                <td>Chen Yuzhe</td>
+                <td>Graduate student, Department of Control Science and Engineering</td>
+            </tr>
+            <tr>
+                <td>Sheng Kai</td>
+                <td>Senior student, Artificial Intelligence</td>
+            </tr>
+            <tr>
+                <td>Zhu Siya</td>
+                <td>Senior student, Mathematics</td>
+            </tr>
+            <tr>
+                <td>Wang Zhaofengnian</td>
+                <td>Senior student, Physics</td>
+            </tr>
+            <tr>
+                <td>Wang Xiangyi</td>
+                <td>Junior student, Artificial Intelligence</td>
+            </tr>
+            <tr>
+                <td>Qi Chengkai</td>
+                <td>Junior student, Artificial Intelligence</td>
+            </tr>
+            <tr>
+                <td>Li Yingxuan</td>
+                <td>Sophomore student, Robotics</td>
             </tr>
         </tbody>
     </table>
