@@ -6,12 +6,4 @@ Welcome to the official GitHub repository of the TJARK-OPL team participating in
 Visit our team website: [https://kai-sheng-caesar.github.io/tjark-opl.github.io/]
 
 ## Qualification Video
-Watch our qualification video: 
-
-## Robots
-
-## Publications
-
-## Team Members
-
-## Software Repositories
+Watch our qualification video: [https://youtu.be/Mq5DDaTxdFg]
