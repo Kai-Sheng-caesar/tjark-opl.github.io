@@ -16,6 +16,12 @@
     iframe {max-width:100%; height:400px;}
     .team-member {display:flex; flex-wrap:wrap; gap:20px;}
     .member {flex:1 1 200px; text-align:center;}
+    #team table {border-collapse: collapse; width: 100%;}
+    #team table, #team th, #team td {border: 1px solid #000;}
+    #team th, #team td {padding: 8px; text-align: left;}
+    #instructors table {border-collapse: collapse; width: 100%;}
+    #instructors table, #instructors th, #instructors td {border: 1px solid #000;}
+    #instructors th, #instructors td {padding: 8px; text-align: left;}
 </style>
 </head>
 <body>
@@ -27,6 +33,7 @@
         <a href="#video">Media</a>
         <a href="#publications">Publications</a>
         <a href="#team">Team</a>
+        <a href="#instructors">Instructors</a>
         <a href="#history">History</a>
     </nav>
 </header>
@@ -106,22 +113,6 @@
         For human pose estimation, we employ OpenPose to achieve robust, real-time multi-person body-part detection using a non-parametric representation.
     </p>
 
-    <!-- GUI -->
-    <h3>Graphical User Interface</h3>
-    <p>
-        As a domestic service robot, smooth GUI interaction is essential. 
-        Our robot is equipped with a laptop that enables a user-friendly, cross-platform graphical interface. 
-        Even users without robotics experience can easily operate the robot.
-    </p>
-    <p>
-        The GUI currently includes twenty applications, such as Motion, Conversation, Vision, and Joints. 
-        Motion allows users to move the robot by distance, direction, or speed. 
-        Conversation supports English and Chinese interaction. 
-        Vision displays real-time camera feeds with adjustable resolution. 
-        Joints provides developers with detailed joint status for debugging. 
-        We expect this GUI to further enhance the robot’s usability and capability.
-    </p>
-
     <!-- Software Framework -->
     <h3>Software Framework</h3>
     <p>
@@ -146,85 +137,61 @@
 <section id="publications">
     <h2>Publications</h2>
     <ul>
-        <li><a href="assets/papers/paper.pdf" target="_blank">Paper </a></li>
+        <li><a href="https://ieeexplore.ieee.org/document/10004992" target="_blank">L. Wang, Z. He, R. Dang, H. Chen, C. Liu, and Q. Chen, “RES-StS: Referring expression speaker via self-training with scorer for goal-oriented vision-language navigation,” IEEE Transactions on Circuits and Systems for Video Technology, 2023, doi: 10.1109/TCSVT.2022.3233554</a></li>
+        <li><a href="https://www.ijcai.org/proceedings/2023/0164.pdf" target="_blank">L. Wang, Z. He, J. Tang, R. Dang, N. Wang, C. Liu, and Q. Chen, “A dual semantic-aware recurrent global-adaptive network for vision-and-language navigation,” in Proceedings of the thirty-second international joint conference on artificial intelligence, IJCAI-23, E. Elkind, Ed., International Joint Conferences on Artificial Intelligence Organization, Aug. 2023, pp. 1479–1487. doi: 10.24963/ijcai.2023/164</a></li>
+        <li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0952197623016718" target="_blank">L. Wang, C. Liu, Z. He, S. Li, Q. Yan, H. Chen, and Q. Chen, “PASTS: Progress-aware spatio-temporal transformer speaker for vision-and-language navigation,” Engineering Applications of Artificial Intelligence, 2023, doi: https://doi.org/10.1016/j.engappai.2023.107487</a></li>
+        <li><a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Wang_Vision-and-Language_Navigation_via_Causal_Learning_CVPR_2024_paper.pdf" target="_blank">L. Wang, Z. He, R. Dang, M. Shen, C. Liu, and Q. Chen, “Vision-and-language navigation via causal learning,” in Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (CVPR), Jun. 2024, pp. 13139–13150. doi: 10.1109/CVPR52733.2024.01248</a></li>
+        <li><a href="https://ieeexplore.ieee.org/document/11115085" target="_blank">Z. He, L. Wang, L. Chen, C. Liu and Q. Chen, "NavComposer: Composing Language Instructions for Navigation Trajectories through Action-Scene-Object Modularization," in IEEE Transactions on Circuits and Systems for Video Technology, doi: 10.1109/TCSVT.2025.3596386</a></li>
+        <li><a href="https://ieeexplore.ieee.org/document/10802484/" target="_blank">Z. He, L. Wang, L. Chen, S. Li, Q. Yan, C. Liu, and Q. Chen, “Multimodal evolutionary encoder for continuous vision-language navigation,” in 2024 IEEE/RSJ international conference on intelligent robots and systems (IROS), Oct. 2024, pp. 1443–1450. doi: 10.1109/IROS58592.2024.10802484</a></li>
+        <li><a href="https://ieeexplore.ieee.org/document/10288539" target="_blank">Z. He, L. Wang, R. Dang, S. Li, Q. Yan, C. Liu, and Q. Chen, “Learning depth representation from RGB-d videos by time-aware contrastive pre-training,” IEEE Transactions on Circuits and Systems for Video Technology, vol. 34, no. 6, pp. 4143–4158, Jun. 2024, doi: 10.1109/TCSVT.2023.3326373</a></li>
     </ul>
 </section>
-
+    
 <section id="team">
     <h2>Team Members</h2>
-
-    <style>
-        #team table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        #team table, #team th, #team td {
-            border: 1px solid #000;
-        }
-        #team th, #team td {
-            padding: 8px;
-            text-align: left;
-        }
-    </style>
-
     <table>
         <thead>
-            <tr>
-                <th>Name</th>
-                <th>Introduction</th>
-            </tr>
+            <tr><th>Name</th><th>Introduction</th></tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Yang Xu</td>
-                <td>Leader, Graduate student, Department of Control Science and Engineering</td>
-            </tr>
-            <tr>
-                <td>Zhu Qijia</td>
-                <td>Graduate student, Department of Control Science and Engineering</td>
-            </tr>
-            <tr>
-                <td>Qian Liang</td>
-                <td>Graduate student, Department of Control Science and Engineering</td>
-            </tr>
-            <tr>
-                <td>Chen Yuzhe</td>
-                <td>Graduate student, Department of Control Science and Engineering</td>
-            </tr>
-            <tr>
-                <td>Sheng Kai</td>
-                <td>Senior student, Artificial Intelligence</td>
-            </tr>
-            <tr>
-                <td>Zhu Siya</td>
-                <td>Senior student, Mathematics</td>
-            </tr>
-            <tr>
-                <td>Wang Zhaofengnian</td>
-                <td>Senior student, Physics</td>
-            </tr>
-            <tr>
-                <td>Wang Xiangyi</td>
-                <td>Junior student, Artificial Intelligence</td>
-            </tr>
-            <tr>
-                <td>Qi Chengkai</td>
-                <td>Junior student, Artificial Intelligence</td>
-            </tr>
-            <tr>
-                <td>Li Yingxuan</td>
-                <td>Sophomore student, Robotics</td>
-            </tr>
+            <tr><td>Yang Xu</td><td>Leader, Graduate student, Department of Control Science and Engineering</td></tr>
+            <tr><td>Zhu Qijia</td><td>Graduate student, Department of Control Science and Engineering</td></tr>
+            <tr><td>Qian Liang</td><td>Graduate student, Department of Control Science and Engineering</td></tr>
+            <tr><td>Chen Yuzhe</td><td>Graduate student, Department of Control Science and Engineering</td></tr>
+            <tr><td>Sheng Kai</td><td>Senior student, Artificial Intelligence</td></tr>
+            <tr><td>Zhu Siya</td><td>Senior student, Mathematics</td></tr>
+            <tr><td>Wang Zhaofengnian</td><td>Senior student, Physics</td></tr>
+            <tr><td>Wang Xiangyi</td><td>Junior student, Artificial Intelligence</td></tr>
+            <tr><td>Qi Chengkai</td><td>Junior student, Artificial Intelligence</td></tr>
+            <tr><td>Li Yingxuan</td><td>Sophomore student, Robotics</td></tr>
         </tbody>
     </table>
 </section>
 
+<section id="instructors">
+    <h2>Instructors</h2>
+    <table>
+        <thead>
+            <tr><th>Name</th><th>Introduction</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Chen Qijun</td><td>Professor, Department of Control Science and Engineering</td></tr>
+            <tr><td>Liu Chengju</td><td>Professor, Department of Control Science and Engineering</td></tr>
+            <tr><td>Yao Chenpeng</td><td>Assistant Professor, Department of Control Science and Engineering</td></tr>
+        </tbody>
+    </table>
+</section>
 
 <section id="history">
     <h2>RoboCup Participation</h2>
     <p>Previous participation and rankings in RoboCup and local tournaments.</p>
     <ul>
-        <li>RoboCup 2025 – Champion</li>
+        <li>2019 RoboCup SSPL – Champion</li>
+        <li>2020 RoboCup SSPL – Champion</li>
+        <li>2021 RoboCup SSPL – Champion</li>
+        <li>2021 RoboCup OPL – Champion</li>
+        <li>2022 RoboCup SSPL – First Prize</li>
+        <li>2025 RoboCup OPL – Champion</li>
     </ul>
 </section>
 
