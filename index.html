@@ -4,6 +4,274 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TJARK-OPL RoboCup Team</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #004080;
+    --bg: #f7f9fc;
+    --card: #ffffff;
+    --text: #222;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #003366, #0055aa);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2.6rem;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Section Card */
+section {
+    max-width: 1100px;
+    margin: 50px auto;
+    background: var(--card);
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    border-left: 6px solid var(--primary);
+    padding-left: 10px;
+}
+
+h3 {
+    margin-top: 30px;
+}
+
+/* Gallery */
+.gallery {
+    column-count: 3;
+    column-gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    break-inside: avoid;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+/* Video */
+iframe {
+    width: 100%;
+    height: 420px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #f1f4f9;
+    text-align: left;
+}
+
+/* Footer spacing */
+#history ul li {
+    margin: 8px 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .gallery {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        column-count: 1;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>TJARK-OPL RoboCup Team</h1>
+    <nav>
+        <a href="#overview">Home</a>
+        <a href="#media">Media</a>
+        <a href="#publications">Publications</a>
+        <a href="#instructors">Instructors</a>
+        <a href="#team">Team</a>
+        <a href="#history">History</a>
+    </nav>
+</header>
+
+<section id="overview">
+    <h2>Introduction</h2>
+    <p>
+        TJARK-OPL is a RoboCup@Home team from the Robotics and Artificial Intelligence Lab (RAIL),
+        Tongji University. Our research focuses on autonomous service robots for real-world home environments.
+    </p>
+
+    <h3>Research Focus</h3>
+    <ul>
+        <li>Visual SLAM & Autonomous Navigation</li>
+        <li>Human–Robot Interaction</li>
+        <li>Object Detection & Recognition</li>
+        <li>Motion Control & Task Planning</li>
+    </ul>
+</section>
+
+<section id="media">
+    <h2>Media</h2>
+
+    <h3>Photo Gallery</h3>
+    <div class="gallery">
+        <img src="assets/photos/robot1.png" alt="robot">
+        <img src="assets/photos/robot2.png" alt="robot">
+        <img src="assets/photos/robot3.png" alt="robot">
+    </div>
+
+    <h3>Qualification Video</h3>
+    <iframe src="https://www.youtube.com/embed/Mq5DDaTxdFg" allowfullscreen></iframe>
+</section>
+
+<section id="publications">
+    <h2>Publications</h2>
+    <ul>
+        <li>
+            Wang et al., <em>Vision-and-Language Navigation via Causal Learning</em>, CVPR 2024
+        </li>
+        <li>
+            He et al., <em>NavComposer</em>, IEEE TCSVT 2025
+        </li>
+    </ul>
+</section>
+
+<section id="instructors">
+    <h2>Instructors</h2>
+    <table>
+        <tr><th>Name</th><th>Affiliation</th></tr>
+        <tr><td>Chen Qijun</td><td>Professor, Tongji University</td></tr>
+        <tr><td>Liu Chengju</td><td>Professor, Tongji University</td></tr>
+        <tr><td>Yao Chenpeng</td><td>Assistant Professor</td></tr>
+    </table>
+</section>
+
+<section id="team">
+    <h2>Team Members</h2>
+    <table>
+        <tr><th>Name</th><th>Role</th></tr>
+        <tr><td>Yang Xu</td><td>Team Leader</td></tr>
+        <tr><td>Zhu Qijia</td><td>Graduate Student</td></tr>
+        <tr><td>Qian Liang</td><td>Graduate Student</td></tr>
+    </table>
+</section>
+
+<section id="history">
+    <h2>RoboCup Participation</h2>
+    <ul>
+        <li>2019 RoboCup SSPL – Champion</li>
+        <li>2020 RoboCup SSPL – Champion</li>
+        <li>2021 RoboCup OPL – Champion</li>
+        <li>2025 RoboCup OPL – Champion</li>
+    </ul>
+</section>
+
+<!-- Image Lightbox -->
+<script>
+document.querySelectorAll(".gallery img").forEach(img => {
+    img.onclick = () => {
+        const overlay = document.createElement("div");
+        overlay.style = `
+            position:fixed;
+            top:0;left:0;
+            width:100%;height:100%;
+            background:rgba(0,0,0,0.85);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            z-index:9999;
+        `;
+        const bigImg = img.cloneNode();
+        bigImg.style.maxWidth = "90%";
+        bigImg.style.maxHeight = "90%";
+        overlay.appendChild(bigImg);
+        overlay.onclick = () => overlay.remove();
+        document.body.appendChild(overlay);
+    };
+});
+</script>
+
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TJARK-OPL RoboCup Team</title>
 <style>
     body {font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6;}
     header {background:#004080; color:white; padding:20px 0; text-align:center;}
@@ -214,4 +482,4 @@
 </section>
 
 </body>
-</html>
+</html> -->
