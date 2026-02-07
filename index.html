@@ -317,6 +317,9 @@ header nav a:hover::after {
     <div class="slideshow-container">
         <div class="slide"><img src="assets/photos/robot1.png" alt="robot1"></div>
         <div class="slide"><img src="assets/photos/robot2.png" alt="robot2"></div>
+
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
     </div>
 
     <h3>Qualification Video</h3>
@@ -331,7 +334,7 @@ header nav a:hover::after {
     margin: 20px auto;
     overflow: hidden;
     border-radius: 12px;
-    background: #000; 
+    background: rgba(0, 0, 0, 0.2); 
 }
 
 .slide {
@@ -344,23 +347,60 @@ header nav a:hover::after {
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: contain; 
 }
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 12px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+    user-select: none;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.4); 
+    transition: 0.3s;
+    z-index: 2;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
 </style>
 
 <script>
 let slideIndex = 0;
 const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
 
-function showSlides() {
-    slides.forEach(slide => slide.style.display = 'none'); 
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1; }
-    slides[slideIndex - 1].style.display = 'block';
-    setTimeout(showSlides, 4000); 
+function showSlides(n) {
+    slides.forEach(slide => slide.style.display = 'none');
+    slideIndex = (n + totalSlides) % totalSlides;
+    slides[slideIndex].style.display = 'block';
 }
 
-showSlides();
+function autoSlides() {
+    slideIndex++;
+    showSlides(slideIndex);
+    setTimeout(autoSlides, 6000); 
+}
+
+document.querySelector('.prev').addEventListener('click', () => {
+    showSlides(slideIndex - 1);
+});
+document.querySelector('.next').addEventListener('click', () => {
+    showSlides(slideIndex + 1);
+});
+
+showSlides(slideIndex);
+autoSlides();
 </script>
 
 <section id="publications">
