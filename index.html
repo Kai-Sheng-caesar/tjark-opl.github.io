@@ -276,6 +276,11 @@ header nav a:hover::after {
         Our VSLAM algorithm is based on RTAB-Map and modified for our robot’s sensors. 
         Odometry and laser data provide initial pose estimation, while stereo data performs appearance-based loop closure to optimize local and global poses.
     </p>
+    
+    <div style="text-align:center; margin: 20px 0;">
+        <img src="assets/photos/slam.png" alt="SLAM Map" style="max-width:100%; height:auto; border-radius:8px;">
+    </div>
+    
     <p>
         The VSLAM system generates a 3D point cloud, which we project into a 2D grid map for navigation. 
         With the map and robot parameters, the DWA (Dynamic Window Approach) algorithm plans a safe path. 
@@ -291,6 +296,11 @@ header nav a:hover::after {
         For object-level reasoning, we designed a detection framework based on YOLO for real-time indoor object recognition across 50 categories. 
         Training data is collected from large public datasets, and adjacent frame matching is used to improve robustness.
     </p>
+    
+    <div style="text-align:center; margin: 20px 0;">
+        <img src="assets/photos/obj_detect.jpg" alt="Object Detection" style="max-width:100%; height:auto; border-radius:8px;">
+    </div>
+    
     <p>
         As the robot’s built-in camera has a limited field of view, we expand visual perception by stitching images from multiple viewpoints, 
         followed by fusion algorithms to reduce lighting and geometric inconsistencies. 
