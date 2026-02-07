@@ -297,8 +297,10 @@ header nav a:hover::after {
         Training data is collected from large public datasets, and adjacent frame matching is used to improve robustness.
     </p>
     
-    <div style="text-align:center; margin: 20px 0;">
-        <img src="assets/photos/obj_detect.jpg" alt="Object Detection" style="max-width:100%; height:auto; border-radius:8px;">
+    <div class="obj-gallery">
+        <img src="assets/photos/obj_detect.jpg" alt="Object Detection 1">
+        <img src="assets/photos/obj2.png" alt="Object Detection 2">
+        <img src="assets/photos/obj3.png" alt="Object Detection 3">
     </div>
     
     <p>
@@ -309,6 +311,40 @@ header nav a:hover::after {
     <p>
         For human pose estimation, we employ OpenPose to achieve robust, real-time multi-person body-part detection using a non-parametric representation.
     </p>
+    <style>
+    .obj-gallery {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 20px 0;
+    }
+    
+    .obj-gallery img {
+        width: 32%;
+        border-radius: 8px;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    
+    .obj-gallery img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+    
+    @media (max-width: 900px) {
+        .obj-gallery img {
+            width: 48%;
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .obj-gallery img {
+            width: 100%;
+        }
+    }
+    </style>
 
     <!-- Software Framework -->
     <h3>Software Framework</h3>
@@ -328,6 +364,7 @@ header nav a:hover::after {
         <div class="slide"><img src="assets/photos/robot1.png" alt="robot1"></div>
         <div class="slide"><img src="assets/photos/robot2.png" alt="robot2"></div>
         <div class="slide"><img src="assets/photos/robot3.jpg" alt="robot3"></div>
+        <div class="slide"><img src="assets/photos/robot4.jpg" alt="robot4"></div>
 
         <a class="prev">&#10094;</a>
         <a class="next">&#10095;</a>
